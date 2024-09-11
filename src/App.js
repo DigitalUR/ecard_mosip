@@ -12,7 +12,7 @@ function App() {
     <Routes>
       {/* <Route path='navbar' component={<Navbar/>}/> */}
       <Route path='/' element={<HelloWorld/>}/>
-      <Route path='studentPortal/:data' element={<StudentCard/>}/>
+      <Route path='/studentPortal/:data' element={<StudentCard/>}/>
     </Routes>
     {/* <Login/> */}
     </>
