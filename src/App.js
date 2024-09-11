@@ -11,9 +11,9 @@ function App() {
     <>
     <Routes>
       {/* <Route path='navbar' component={<Navbar/>}/> */}
-      <Route path='/' element={<HelloWorld/>}/>
-      <Route path='/One' element={<One/>}/>
-      <Route path='/studentPortal/:data' element={<StudentCard/>}/>
+      <Route path="/" element={<HelloWorld/>}/>
+      <Route path="/one" element={<One/>}/>
+      <Route path="/studentPortal/:data" element={<StudentCard/>}/>
     </Routes>
     {/* <Login/> */}
     </>
