@@ -1,14 +1,19 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './scenes/auth';
 import Navbar from './scenes/navbar';
 import StudentCard from './scenes/studentCard';
+// import { useParams } from 'react-router-dom';
 
 function App() {
+ 
   return (
     <>
-    {/* <Navbar/> */}
-    {/* <StudentCard/> */}
-    <Login/>
+    <Routes>
+      {/* <Route path='navbar' component={<Navbar/>}/> */}
+      <Route path='studentPortal/:data' element={<StudentCard/>}/>
+    </Routes>
+    {/* <Login/> */}
     </>
   );
 }

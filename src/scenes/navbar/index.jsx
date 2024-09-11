@@ -1,10 +1,10 @@
 const Navbar = () => {
     return ( <>
         <div class="container nav ">
-        <div class="logo-div"><img src="assets/University of Rwanda - LOGO LANDSCAPE _RV Official.png"  width="105px" height="45px" alt=""/></div>
+        <div class="logo-div"><img src="../assets/University of Rwanda - LOGO LANDSCAPE _RV Official.png"  width="105px" height="45px" alt=""/></div>
         <div class="nav-bar" style={ {display:"flex"}}> 
             <div style={{ padding: 0,  display: 'flex',justifyContent:'end', width: '100%'}}>
-            <div class="profile" style={{padding:0, display: 'flex', width: '200px',gap: '10px'}}><i class="fa-solid fa-user"></i><span>Mbarushimana Fabrice</span></div></div>
+            <div class="profile" style={{padding:0, display: 'flex', width: '200px',gap: '10px'}}><i class="fa-solid fa-user"></i><span>Maria Powell</span></div></div>
     </div>
     </div>
     
