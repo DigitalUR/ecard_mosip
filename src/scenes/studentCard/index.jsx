@@ -6,6 +6,10 @@ import { jwtDecode } from 'jwt-decode';
 
 const StudentCard = () => {
     const { data: encodedData } = useParams(); // Access the JWT parameter
+    // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+    
+    let encodedDataArray = ["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9", ...encodedData.split(".")]
+    console.log("mbaduko ",encodedDataArray)
 
     let decodedData;
 

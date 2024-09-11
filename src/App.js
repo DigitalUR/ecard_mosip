@@ -11,6 +11,7 @@ function App() {
     <>
     <Routes>
       {/* <Route path='navbar' component={<Navbar/>}/> */}
+      <Route path='/' element={<HelloWorld/>}/>
       <Route path='studentPortal/:data' element={<StudentCard/>}/>
     </Routes>
     {/* <Login/> */}
@@ -19,3 +20,9 @@ function App() {
 }
 
 export default App;
+
+const HelloWorld = ()=>{
+  return (  <>
+    Hello world ...
+  </>)
+}
