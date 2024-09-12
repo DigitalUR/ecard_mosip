@@ -29,16 +29,12 @@ const StudentCard = () => {
                 throw new Error('Network response was not ok');
             }
             // Parse the response body as JSON
-            data = response.json()
-            setImage(data.picture)
-            // return response.json();
+           
+            return response.json();
         })
         .then(data => {
-            if (dataCountConf) {
-                // console.log(data);
-                setDataCount(data);
-                setDataCountConf(false);
-            }
+            // let image = response.json()
+            setImage(data.picture)
         })
         .catch(error => console.log(error))
     }
