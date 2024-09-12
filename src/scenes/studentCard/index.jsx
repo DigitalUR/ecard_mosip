@@ -8,8 +8,8 @@ const StudentCard = () => {
     const { data: encodedData } = useParams(); // Access the JWT parameter
     // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
     
-    let encodedDataArray = ["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9", ...encodedData.split(".")]
-    console.log("mbaduko ",encodedDataArray)
+    // let encodedDataArray = ["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9", ...encodedData.split(".")]
+    // console.log("mbaduko ",encodedDataArray)
 
     let decodedData;
 
@@ -21,14 +21,6 @@ const StudentCard = () => {
         decodedData = {}; // Set default empty object on error
     }
 
-    decodedData.image = "image1"
-    decodedData.regNo = "image1"
-    decodedData.school = "image1"
-    decodedData.faculty = "image1"
-    decodedData.phoneNumber = "image1"
-    decodedData.email = "image1"
-    decodedData.dateOfBirth = "image1"
-    decodedData.location = "image1"
 
 
     return (
@@ -50,10 +42,10 @@ const StudentCard = () => {
                                 <td>Faculty</td>
                             </tr>
                             <tr>
-                                <td>{decodedData.name || 'Maria Powell'}</td>
-                                <td>{decodedData.regNo || 'bbb'}</td>
+                                <td>{decodedData.name || '...'}</td>
+                                <td>{decodedData.regno || '...'}</td>
                                 <td>{decodedData.school || '...'}</td>
-                                <td>{decodedData.faculty || '...'}</td>
+                                <td>{decodedData.school || '...'}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -62,11 +54,11 @@ const StudentCard = () => {
                         <tbody>
                             <tr>
                                 <td>Phone Number</td>
-                                <td>{decodedData.phoneNumber || '8763740607'}</td>
+                                <td>{decodedData.phone_number || '...'}</td>
                             </tr>
                             <tr>
                                 <td>Email</td>
-                                <td>{decodedData.email || 'maria@test.io'}</td>
+                                <td>{decodedData.email || '...'}</td>
                             </tr>
                             <tr>
                                 <td style={{ backgroundColor: 'transparent' }}> &nbsp;</td>
@@ -74,18 +66,18 @@ const StudentCard = () => {
                             </tr>
                             <tr>
                                 <td>Date of birth</td>
-                                <td>{decodedData.dateOfBirth || '1992/04/29'}</td>
+                                <td>{decodedData.birthdate || '...'}</td>
                             </tr>
                             <tr>
                                 <td>Location</td>
-                                <td>{decodedData.location || 'ABC City'}</td>
+                                <td>{decodedData.address.locality || '...'}</td>
                             </tr>
                         </tbody>
                     </table>
 
                     <div className="status_div">
-                        <div style={{ fontWeight: 'bolder' }}>
-                            {decodedData.status || 'Current Student'}
+                        <div style={{ fontWeight: 'bolder',textAlign:'center' }}>
+                        {decodedData.active ? 'Current Student':  'Not Student'}
                         </div>
                     </div>
                 </div>
