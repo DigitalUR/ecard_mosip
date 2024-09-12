@@ -14,8 +14,8 @@ function App() {
       <Route path="/" element={<HelloWorld/>}/>
       <Route path="/One1" element={<One/>}/>
       <Route path="/studentPortal/:data" element={<StudentCard/>}/>
+      <Route path="/auth" element={<Login/>}/>
     </Routes>
-    {/* <Login/> */}
     </>
   );
 }
