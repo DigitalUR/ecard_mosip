@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Base64Image from '../../components/base64Image';
 import Navbar from '../navbar';
@@ -6,6 +6,7 @@ import { jwtDecode } from 'jwt-decode';
 
 const StudentCard = () => {
     const { data: encodedData } = useParams(); // Access the JWT parameter
+    const [image, setImage] = useState();
     // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
     
     // let encodedDataArray = ["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9", ...encodedData.split(".")]
@@ -21,11 +22,32 @@ const StudentCard = () => {
         decodedData = {}; // Set default empty object on error
     }
 
+    if(decodedData.picture){
+        fetch(`https://ecard-backend.onrender.com/oath2/getImage?imageFileName=${decodedData.picture}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            // Parse the response body as JSON
+            data = response.json()
+            setImage(data.picture)
+            // return response.json();
+        })
+        .then(data => {
+            if (dataCountConf) {
+                // console.log(data);
+                setDataCount(data);
+                setDataCountConf(false);
+            }
+        })
+        .catch(error => console.log(error))
+    }
+
 
 
     return (
         <>
-            <Navbar />
+            <Navbar profileName = {decodedData.name}/>
             <div className="container flex_row">
                 <div style={{ padding: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Base64Image imageData = {decodedData.image} />
