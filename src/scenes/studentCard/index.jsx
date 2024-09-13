@@ -11,19 +11,19 @@ const StudentCard = () => {
     
     // let encodedDataArray = ["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9", ...encodedData.split(".")]
     // console.log("mbaduko ",encodedDataArray)
-
+    
     let decodedData;
-
+    
     try {
         decodedData = jwtDecode(encodedData); // Decode the JWT
-        console.log(decodedData);
+        // console.log(decodedData);
     } catch (error) {
         console.error('Invalid data', error);
         decodedData = {}; // Set default empty object on error
     }
 
     if(decodedData.picture){
-        fetch(`https://ecard-backend.onrender.com/oath2/getImage?imageFileName=${decodedData.picture}`)
+        fetch(`https://ecard-backend.onrender.com/api/oauth2/getImage/${decodedData.picture}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -34,6 +34,9 @@ const StudentCard = () => {
         })
         .then(data => {
             // let image = response.json()
+            console.log('...' + decodedData.picture)
+            console.log('kety' + data);
+            setImage(data.picture)
             setImage(data.picture)
         })
         .catch(error => console.log(error))
@@ -46,7 +49,7 @@ const StudentCard = () => {
             <Navbar profileName = {decodedData.name}/>
             <div className="container flex_row">
                 <div style={{ padding: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Base64Image imageData = {decodedData.image} />
+                    <Base64Image imageData = {image} />
                 </div>
                 <div>
                     <h3 style={{ marginLeft: '28px', fontWeight: 'bold' }} className="title-1">Basic Information</h3>
