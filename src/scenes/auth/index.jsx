@@ -52,33 +52,7 @@ const Login = () => {
         const redirectUri = 'https://ecard-backend.onrender.com/api/oauth2/esignet/callback';
 
         // alert("hello world");
-        window.location.href = `https://esignet.collab.mosip.net/authorize?scope=openid profile&response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}`;
-
-        // var url = "http://localhost/eax-app/api/public/auth/login";
-        // var data = new URLSearchParams();
-        // data.append("data", JSON.stringify(formData));
-
-        // fetch(url, {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/x-www-form-urlencoded",
-        //     },
-        //     body: data,
-        // })
-        //     .then(response => response.json())
-        //     // .then(data => console.log(data))
-        //     .then(data => {
-        //         // if(data === "20001"){
-        //             // data = JSON.parse(data)
-        //             // console.log(data[0][0]['username']);
-        //             console.log(data[0][0].hasOwnProperty('username'));
-        //         if(data[0][0].hasOwnProperty('username')){
-        //             isLogged['setLoggedIn'](data[0][0]);
-        //         }else{
-        //             alert("incollect password")
-        //         }
-        //     })
-        //     .catch(error => console.error("Error: " + error));
+        window.location.href = `https://esignet.collab.mosip.net/authorize?scope=openid profile&response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=ecard_request`;
 
       };
     return (
