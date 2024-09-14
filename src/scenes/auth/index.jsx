@@ -52,7 +52,7 @@ const Login = () => {
         const redirectUri = 'https://ecard-backend.onrender.com/api/oauth2/esignet/callback';
 
         // alert("hello world");
-        window.location.href = `https://esignet.collab.mosip.net/authorize?scope=openid profile&response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=ecard_request`;
+        window.location.href = `https://esignet.collab.mosip.net/authorize?scope=openid profile&response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=ecard_request&mbaduko=mbadukostatehere`;
 
       };
     return (
