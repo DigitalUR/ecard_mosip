@@ -16,7 +16,7 @@ const StudentCard = () => {
     
     try {
         decodedData = jwtDecode(encodedData); // Decode the JWT
-        // console.log(decodedData);
+        console.log("decoded data ...",decodedData);
     } catch (error) {
         console.error('Invalid data', error);
         decodedData = {}; // Set default empty object on error
