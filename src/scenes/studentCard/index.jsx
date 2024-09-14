@@ -22,7 +22,7 @@ const StudentCard = () => {
         decodedData = {}; // Set default empty object on error
     }
 
-    if(decodedData.picture){
+
         fetch(`https://ecard-backend.onrender.com/api/oauth2/getImage`)
         .then(response => {
             if (!response.ok) {
@@ -40,7 +40,7 @@ const StudentCard = () => {
             setImage(data.picture)
         })
         .catch(error => console.log(error))
-    }
+   
 
 
 
