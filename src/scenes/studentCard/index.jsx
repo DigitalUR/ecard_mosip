@@ -39,7 +39,7 @@ const StudentCard = () => {
             console.log('kety' + data);
             setImage(data.picture)
             setImage(data.picture)
-            isLoading(false)
+            setIsLoading(false)
         })
         .catch(error => console.log(error))
    
@@ -63,6 +63,7 @@ const StudentCard = () => {
                                 <td>Reg No</td>
                                 <td>School</td>
                                 <td>Faculty</td>
+
                             </tr>
                             <tr>
                                 <td>{decodedData.name || '...'}</td>
