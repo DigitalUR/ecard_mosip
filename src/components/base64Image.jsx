@@ -5,7 +5,7 @@ const Base64Image = ({imageData}) => {
 
   return (
     <div>
-      {imageData}
+      {/* {imageData} */}
       <img class="profile_image" height="300px" src={imageData} alt="Base64 Image" />
     </div>
   );
