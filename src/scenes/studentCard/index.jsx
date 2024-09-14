@@ -23,7 +23,7 @@ const StudentCard = () => {
     }
 
     if(decodedData.picture){
-        fetch(`https://ecard-backend.onrender.com/api/oauth2/getImage/${decodedData.picture}`)
+        fetch(`https://ecard-backend.onrender.com/api/oauth2/getImage`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
