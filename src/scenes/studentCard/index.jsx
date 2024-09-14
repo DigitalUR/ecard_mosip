@@ -7,6 +7,7 @@ import { jwtDecode } from 'jwt-decode';
 const StudentCard = () => {
     const { data: encodedData } = useParams(); // Access the JWT parameter
     const [image, setImage] = useState();
+    const [isLoading, setIsLoading] = useState(true);
     // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
     
     // let encodedDataArray = ["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9", ...encodedData.split(".")]
@@ -38,6 +39,7 @@ const StudentCard = () => {
             console.log('kety' + data);
             setImage(data.picture)
             setImage(data.picture)
+            isLoading(false)
         })
         .catch(error => console.log(error))
    
@@ -49,7 +51,7 @@ const StudentCard = () => {
             <Navbar profileName = {decodedData.name}/>
             <div className="container flex_row">
                 <div style={{ padding: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Base64Image imageData = {image} />
+                    {isLoading ? 'Image loading...' :  <Base64Image imageData = {image} />}
                 </div>
                 <div>
                     <h3 style={{ marginLeft: '28px', fontWeight: 'bold' }} className="title-1">Basic Information</h3>
