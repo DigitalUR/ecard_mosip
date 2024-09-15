@@ -7,7 +7,7 @@
     margin: 0;
     text-decoration: 0;
     box-sizing: border-box;
-    --primary-color: rgb(90, 103, 167);
+    --primary-color: #5a67a7;
     --container-padding-left:20px;
     --container-padding-top:15px;
     --gray-1:hsl(0.00,0%, 97.686%);

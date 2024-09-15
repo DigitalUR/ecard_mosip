@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { loginContext } from '../../App';
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -63,16 +64,19 @@ const Login = () => {
             <div class="logo-div"><img src="assets/University of Rwanda - LOGO LANDSCAPE _RV Official.png"  width="105px" height="45px" alt=""/></div>
             </div>
             <div className="form">
-                <input type="text" placeholder='Reg number ...'/>
-                <input type="password" placeholder='password' />
-                <input type="submit" style={{fontWeight:'bold'}} value="LOGIN" />
-            <span className='loginSpan'>Forgate password ? <a href='#'>Click here</a></span>
+                <p style={{fontWeight:'bold'}}>eCard, your versatire student digital id.</p>
+                <br />
+                <p>Your ecard is being hosted and provided by University of Rwanda, for more details<Link style={{color:'#5a67a7'}}>click here</Link> </p>
+                <br />
+                <p><span style={{textDecoration:'underline'}}>In contrast to traditional plastic cards</span>, eCard now can be integrated to digital systems and can be used to log into different systems!</p>
+                <br />
+                <img style={{marginLeft:'50%', transform:'translateX(-50%)'}} width='200' src="assets/frame.png" />
+                <br />
                 {/* <input type='hidden' id='eSignet'  value="Signin with eSignet" /> */}
                  <div onClick={()=>{handleESignet()}} for ='eSignet'  className='eSignetButton' style={{backgroundColor:'#F9F9F9', fontWeight:'normal'}} >
-                 <img src="assets/icons/eSignetIcon.png"  height="30" width="30"  alt=""/> Sign in with eSignet
+                 <img src="assets/icons/eSignetIcon.png"  height="30" width="30"  alt=""/> Signin eCard
                  </div>
                 <br />
-            <span className='loginSpan' style={{marginLeft:0}}><a href='#'>Create new account</a></span>
             </div>
         </div>
     </div>  
